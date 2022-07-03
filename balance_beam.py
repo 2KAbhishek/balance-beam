@@ -1,7 +1,7 @@
 # Get started with interactive Python
 import turtle
 
-# create pen
+
 class Pen(turtle.Turtle):
     def __init__(self):
         turtle.Turtle.__init__(self)
@@ -10,6 +10,7 @@ class Pen(turtle.Turtle):
         self.penup()
         self.speed(0)
 
+
 class Goal(turtle.Turtle):
     def __init__(self):
         turtle.Turtle.__init__(self)
@@ -17,6 +18,7 @@ class Goal(turtle.Turtle):
         self.color("green")
         self.penup()
         self.speed(5)
+
 
 class Player(turtle.Turtle):
     def __init__(self):
@@ -93,51 +95,51 @@ levels = []
 
 # define first level
 level_1 = [
-"XXXXXXXXXXXXXXXXXXXXXXXXX",
-"XP                      X",
-"X XXXXXXXXXXXXXXXXXXXXX X",
-"X XXXXXXXXXXXXXXXXXXXXX X",
-"X XXXXXXXXXXXXXXXXXXXXX X",
-"X XXXXXXXXXXXXXXXXXXXXX X",
-"X XXXXXXXXXXXXXXXXXXXXX X",
-"X XXXXXXXXXXXXXXXXXXXXX X",
-"X XXXXXXXXXXXXXXXXXXXXX X",
-"X XXXXXXXXXXXXXXXXXXXXX X",
-"X XXXXXXXXXXXXXXXXXXXXX X",
-"X                      ZX",
-"XXXXXXXXXXXXXXXXXXXXXXXXX"
+    "XXXXXXXXXXXXXXXXXXXXXXXXX",
+    "XP                      X",
+    "X XXXXXXXXXXXXXXXXXXXXX X",
+    "X XXXXXXXXXXXXXXXXXXXXX X",
+    "X XXXXXXXXXXXXXXXXXXXXX X",
+    "X XXXXXXXXXXXXXXXXXXXXX X",
+    "X XXXXXXXXXXXXXXXXXXXXX X",
+    "X XXXXXXXXXXXXXXXXXXXXX X",
+    "X XXXXXXXXXXXXXXXXXXXXX X",
+    "X XXXXXXXXXXXXXXXXXXXXX X",
+    "X XXXXXXXXXXXXXXXXXXXXX X",
+    "X                      ZX",
+    "XXXXXXXXXXXXXXXXXXXXXXXXX"
 ]
 
 level_2 = [
-"XXXXXXXXXXXXXXXXXXXXXXXXX",
-"XP                      X",
-"X XXXX XXXXXX XXXXXXXXX X",
-"X XXXX XXXXXX XXXXXXXXX X",
-"X XXXX XXXXXX XXXXXXXXX X",
-"X XXXX XXXXXX XXXXXXXXX X",
-"X XXXX XXXXXX XXXXXXXXX X",
-"X XXXX XXXXXX XXXXXXXXX X",
-"X XXXX XXXXXX XXXXXXXXX X",
-"X XXXX XXXXXX XXXXXXXXX X",
-"X XXXX XXXXXX XXXXXXXXX X",
-"X                      ZX",
-"XXXXXXXXXXXXXXXXXXXXXXXXX"
+    "XXXXXXXXXXXXXXXXXXXXXXXXX",
+    "XP                      X",
+    "X XXXX XXXXXX XXXXXXXXX X",
+    "X XXXX XXXXXX XXXXXXXXX X",
+    "X XXXX XXXXXX XXXXXXXXX X",
+    "X XXXX XXXXXX XXXXXXXXX X",
+    "X XXXX XXXXXX XXXXXXXXX X",
+    "X XXXX XXXXXX XXXXXXXXX X",
+    "X XXXX XXXXXX XXXXXXXXX X",
+    "X XXXX XXXXXX XXXXXXXXX X",
+    "X XXXX XXXXXX XXXXXXXXX X",
+    "X                      ZX",
+    "XXXXXXXXXXXXXXXXXXXXXXXXX"
 ]
 
 level_3 = [
-"XXXXXXXXXXXXXXXXXXXXXXXXX",
-"XP                      X",
-"X X XXXXXXXXXXXXXXXXXXX X",
-"X X  XXXXXXXXXXXXXXXXXX X",
-"X XX  XXXXXXXXXXXXXXXXX X",
-"X XX       XXXXXXXXXXXX X",
-"X XXXXXXXX  XXXXXXXXXXX X",
-"X XXXXXXXXX  XXXXXXXXXX X",
-"X XXXXXXXXXX   XXXXXXXX X",
-"X XXXXXXX    XXXXXXXXXX X",
-"X XXXXXX  XXXXXXXXXXXXX X",
-"X                      ZX",
-"XXXXXXXXXXXXXXXXXXXXXXXXX"
+    "XXXXXXXXXXXXXXXXXXXXXXXXX",
+    "XP                      X",
+    "X X XXXXXXXXXXXXXXXXXXX X",
+    "X X  XXXXXXXXXXXXXXXXXX X",
+    "X XX  XXXXXXXXXXXXXXXXX X",
+    "X XX       XXXXXXXXXXXX X",
+    "X XXXXXXXX  XXXXXXXXXXX X",
+    "X XXXXXXXXX  XXXXXXXXXX X",
+    "X XXXXXXXXXX   XXXXXXXX X",
+    "X XXXXXXX    XXXXXXXXXX X",
+    "X XXXXXX  XXXXXXXXXXXXX X",
+    "X                      ZX",
+    "XXXXXXXXXXXXXXXXXXXXXXXXX"
 ]
 
 levels.append(level_1)
@@ -146,19 +148,21 @@ levels.append(level_3)
 
 # Add maze to mazes list
 """ This is the Balancing beam game!
-    You can play the  game using instruction and give options using yes or no"""
+    You can play the  game using instruction and give options using yes or no
+"""
 
-print("----------------------------------- Welcome to the Balance Beam! -------------------------------------")
-print("                          Please follow the menu and enter your preference                               ")
+print("--------------- Welcome to the Balance Beam! -----------------")
+print("      Please follow the menu and enter your preference      ")
 
 next_level = "no"
+level = 0
 
 quit_game = input("Do you want to quit? (yes or no): ")
 if quit_game == "Yes" or quit_game == "yes":
     print("You have quit the game! Bye!")
 
 while quit_game == "No" or quit_game == "no":
-    print(""" ***************** MENU ************* """)
+    print(""" ************ MENU ************* """)
 
     ins = input("Do you want to get instructions on screen? (yes or no): ")
     back = "no"
@@ -170,17 +174,14 @@ while quit_game == "No" or quit_game == "no":
 
             back = input("Do you want to go back? (yes or no): ")
 
-
     play = input("Do you want to play? (yes or no): ")
     with open('result.txt', 'w') as f:
         f.write('Correct')
     f.close()
     if play == "Yes" or play == "yes":
         levelQ = input("Do you want harder difficulty? (yes or no): ")
-        level = 0
         if levelQ == "Yes" or levelQ == "yes":
             level = 2
-
 
     wn = turtle.Screen()
     wn.setup(700, 700)
@@ -207,7 +208,7 @@ while quit_game == "No" or quit_game == "no":
 
     # Main Game Loop
     while True:
-      # Update Screen
+        # Update Screen
         f = open("result.txt", "r")
         contents = f.read()
         f.close()
